@@ -1,0 +1,21 @@
+OUTFILE REGNAME_regfile.html
+INCLUDE def_regfile.txt
+
+
+<font size="3" face="Times">
+
+LOOP RX REG_NUM
+<ul> 
+<li><b> GROUP_REGS[RX]</b>
+<ul> 
+<li>Offset: 0xGROUP_REGS[RX].ADDR
+<li>Access: TYPE_GROUP_REGS[RX].TYPE
+<li>Description: GROUP_REGS[RX].DESC
+<li>Fields:
+<ul> 
+<b> GROUP_REGRX [EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.START-1):GROUP_REGRX.START]</b><ul><p>Description: GROUP_REGRX.DESC</p><p>Access: TYPE_GROUP_REGRX.TYPE</p><p>Default value: GROUP_REGRX.DEFAULT</p></ul>
+</ul>
+</ul>
+</ul>
+
+ENDLOOP RX

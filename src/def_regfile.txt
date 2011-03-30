@@ -1,0 +1,28 @@
+INCLUDE def_regs.txt
+INCLUDE def_fields.txt
+
+SWAP FFD 1 ##flip-flop delay
+
+## Types:
+## RW - read / write (output from block)
+## RO - read only (input to block)
+## WO - write only (output to block)
+## IW - internal write (output to block - logic is added especially)
+## IR - internal read (no port - logic is added especially)
+ENUM    TYPE_RW  TYPE_RO  TYPE_WO  TYPE_IW  TYPE_IR
+
+SWAP    TYPE_TYPE_RW  Read and Write
+SWAP    TYPE_TYPE_RO  Read only
+SWAP    TYPE_TYPE_WO  Write only
+  
+GROUP APB is {
+ pclken 1 input
+ psel 1 input
+ penable 1 input
+ paddr ADDR_BITS input
+ pwrite 1 input
+ pwdata 32 input
+ prdata 32 output
+ pslverr 1 output
+ pready 1 output
+}
