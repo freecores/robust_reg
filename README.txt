@@ -2,6 +2,10 @@
 ------------------------------ Remark ----------------------------------------
 This code is a generic code written in RobustVerilog. In order to convert it to Verilog a RobustVerilog parser is required. 
 It is possible to download a free RobustVerilog parser from www.provartec.com/edatools.
+
+We will be very happy to receive any kind of feedback regarding our tools and cores. 
+We will also be willing to support any company intending to integrate our cores into their project.
+For any questions / remarks / suggestions / bugs please contact info@provartec.com.
 ------------------------------------------------------------------------------
 
 RobustVerilog generic APB register file
@@ -30,7 +34,6 @@ Creating the output files:
 
 In order to create the design use the run.sh script in the run directory (notice that the run scripts calls the robust binary (RobustVerilog parser)).
 
-For any questions / remarks / suggestions / bugs please contact info@provartec.com.
 
 
 
