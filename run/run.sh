@@ -1,7 +1,5 @@
 #!/bin/bash
 
-../../../robust ../src/regfile.v -od out -list list.txt -listpath -header ${@}
-../../../robust ../src/regfile.h -od out -header ${@}
-../../../robust ../src/regfile.html -od out ${@}
-
-echo Completed RobustVerilog regfile run - results in run/out/
+../../../robust ../src/base/regfile.v -od out -list list.txt -listpath -header -gui ${@}
+../../../robust ../src/base/regfile.h -od out -header -gui ${@}
+../../../robust ../src/base/regfile.html -od out -gui ${@}
