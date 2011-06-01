@@ -1,7 +1,6 @@
 
 echo off
 
-..\..\..\robust.exe ../src/base/regfile.h -od out -header -gui
-..\..\..\robust.exe ../src/base/regfile.html -od out -gui
-..\..\..\robust.exe ../src/base/regfile.v -od out -list list.txt -listpath  -header -gui
+::..\..\..\robust.exe ../src/base/top.txt -od out -list list.txt -listpath -gui
 
+..\..\..\robust.exe robust_reg.pro -gui %1 %2 %3

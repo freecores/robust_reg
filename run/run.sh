@@ -1,6 +1,6 @@
 #!/bin/bash
 
-../../../robust -ver
+../../../robust -null
 if [ $? -eq 0 ];then
   ROBUST=../../../robust
 else
@@ -8,6 +8,5 @@ else
   ROBUST=../../../robust-lite
 fi
 
-$ROBUST ../src/base/regfile.v -od out -list list.txt -listpath -header -gui ${@}
-$ROBUST ../src/base/regfile.h -od out -header -gui ${@}
-$ROBUST ../src/base/regfile.html -od out -gui ${@}
+#$ROBUST ../src/base/top.txt -od out -list list.txt -listpath -gui ${@}
+$ROBUST robust_reg.pro -gui ${@}
