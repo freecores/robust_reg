@@ -1,6 +1,6 @@
-##RobustVerilog project 
+PROJDIR = run 
 
-SRCFILE = top.txt
+SRCFILE = regfile_top.txt
 DEFFILE =
 
 OUTDIR  = out
