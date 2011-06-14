@@ -27,6 +27,8 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
+OUTFILE NULL
+  
 CREATE regfile.v
 CREATE regfile.h DEFCMD(DEFINE NOT_IN_LIST)
 CREATE regfile.html DEFCMD(DEFINE NOT_IN_LIST)
