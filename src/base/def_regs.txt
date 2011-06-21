@@ -1,0 +1,21 @@
+				
+					
+SWAP	REGNAME	DMA					
+  
+ADD_REG(CONFIG0, 0, TYPE_RW, "DMA command reg 0")
+ADD_REG(CONFIG1, 4, TYPE_RW, "DMA command reg 1")
+ADD_REG(CONFIG2, 8, TYPE_RW, "DMA command reg 2")
+ADD_REG(CONFIG3, C, TYPE_RW, "DMA command reg 3")
+ADD_REG(START, 20, TYPE_WO, "Channel start")
+ADD_REG(STATUS, 30, TYPE_RO, "Channel status")
+
+ADD_FIELD(0, rd_start_addr, 32, 0, 0, TYPE_RW, "Read start address")
+ADD_FIELD(1, wr_start_addr, 32, 0, 0, TYPE_RW, "Write start address")
+ADD_FIELD(2, buffer_size, 32, 0, 0, TYPE_RW, "Buffer size")
+ADD_FIELD(3, set_int, 1, 0, 0, TYPE_RW, "Set interrupt on completion")
+ADD_FIELD(3, cmd_last, 1, 1, 1, TYPE_RW, "Last command in list")
+ADD_FIELD(3, next_addr, 28, 3, 0, TYPE_RW, "Next command address")
+ADD_FIELD(4, ch_start , 1, 0, 0, TYPE_WO, "Channel start")
+ADD_FIELD(5, buffer_count, 16, 0, 0, TYPE_RO, "Buffer counter")
+ADD_FIELD(5, int_count, 16, 16, 0, TYPE_RO, "Interrupt counter")
+
