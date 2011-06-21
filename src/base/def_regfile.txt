@@ -1,3 +1,4 @@
+
 <##//////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  Author: Eyal Hochberg                                      ////
@@ -29,8 +30,7 @@
 
 REQUIRE(1.4)
 
-INCLUDE def_regfile_regs.txt
-INCLUDE def_regfile_fields.txt
+INCLUDE def_regs.txt
 
 SWAP.GLOBAL MODEL_NAME regfile
   
@@ -59,3 +59,9 @@ GROUP APB is {
  pslverr 1 output
  pready 1 output
 }
+
+  
+SWAP ADD_REG(NAME, ADDR, TYPE, DESC) GROUP REGS extends { +NEWLINE NAME SON(CONST(ADDR) ADDR) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE }
+
+SWAP ADD_FIELD(REGNUM, NAME, BITS, START_BIT, DEFAULT, TYPE, DESC) GROUP REGREGNUM extends { +NEWLINE NAME BITS SON(START START_BIT) SON(CONST(DEFAULT) DEFAULT) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE }
+

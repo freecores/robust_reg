@@ -30,7 +30,7 @@
 OUTFILE REGNAME_regfile.v
 INCLUDE def_regfile.txt
 
-ITER RX REG_NUM
+ITER RX GROUP_REGS.NUM
 
 module REGNAME_regfile (PORTS);
 
@@ -78,7 +78,7 @@ module REGNAME_regfile (PORTS);
    //---------------------- Write Operations ---------------------------
    assign            wr_regGROUP_REGS.SON(TYPE != TYPE_RO).IDX = gpwrite & (paddr == GROUP_REGS);
 
-   LOOP RX REG_NUM
+   LOOP RX GROUP_REGS.NUM
    IFDEF TRUE(GROUP_REGS[RX].TYPE == TYPE_RW)
    //GROUP_REGS[RX].DESC
    always @(posedge clk or posedge reset)
