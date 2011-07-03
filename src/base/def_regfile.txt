@@ -1,4 +1,3 @@
-
 <##//////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  Author: Eyal Hochberg                                      ////
@@ -28,11 +27,15 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-REQUIRE(1.4)
+REQUIRE(1.5)
+
+STARTUSER
+
+PARAM COUNT 0
 
 INCLUDE def_regs.txt
 
-SWAP.GLOBAL MODEL_NAME regfile
+SWAP.GLOBAL MODEL_NAME PREFIX configuration registers
   
 SWAP FFD 1 ##flip-flop delay
 
@@ -60,8 +63,9 @@ GROUP APB is {
  pready 1 output
 }
 
-  
-SWAP ADD_REG(NAME, ADDR, TYPE, DESC) GROUP REGS extends { +NEWLINE NAME SON(CONST(ADDR) ADDR) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE }
+SWAP.USER ADD_REG(NAME, ADDR, TYPE, DESC) PARAM REG_NAME COUNT +NEWLINE PARAM COUNT +1 +NEWLINE GROUP.USER REGS extends { +NEWLINE NAME SON(CONST(ADDR) ADDR) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE } ##Registers:
 
-SWAP ADD_FIELD(REGNUM, NAME, BITS, START_BIT, DEFAULT, TYPE, DESC) GROUP REGREGNUM extends { +NEWLINE NAME BITS SON(START START_BIT) SON(CONST(DEFAULT) DEFAULT) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE }
+SWAP.USER ADD_FIELD(REGNAME, NAME, BITS, FIRST_BIT, DEFAULT, TYPE, DESC) GROUP.USER REGREG_REGNAME extends { +NEWLINE NAME BITS SON(CONST(FIRST_BIT) FIRST_BIT) SON(CONST(DEFAULT) DEFAULT) SON(CONST(TYPE) TYPE) SON(CONST(DESC) DESC) +NEWLINE } ##Fields:
+
+
 

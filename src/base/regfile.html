@@ -27,7 +27,7 @@
 ////                                                             ////
 //////////////////////////////////////////////////////////////////##>
 
-OUTFILE REGNAME_regfile.html
+OUTFILE PREFIX_regfile.html
 INCLUDE def_regfile.txt
 
 
@@ -42,7 +42,7 @@ LOOP RX GROUP_REGS.NUM
 <li>Description: GROUP_REGS[RX].DESC
 <li>Fields:
 <ul> 
-<b> GROUP_REGRX [EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.START-1):GROUP_REGRX.START]</b><ul><p>Description: GROUP_REGRX.DESC</p><p>Access: TYPE_GROUP_REGRX.TYPE</p><p>Default value: GROUP_REGRX.DEFAULT</p></ul>
+<b> GROUP_REGRX [EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.FIRST_BIT-1):GROUP_REGRX.FIRST_BIT]</b><ul><p>Description: GROUP_REGRX.DESC</p><p>Access: TYPE_GROUP_REGRX.TYPE</p><p>Default value: GROUP_REGRX.DEFAULT</p></ul>
 </ul>
 </ul>
 </ul>

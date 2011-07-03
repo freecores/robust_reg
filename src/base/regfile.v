@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////
+<##//////////////////////////////////////////////////////////////////
 ////                                                             ////
 ////  Author: Eyal Hochberg                                      ////
 ////          eyal@provartec.com                                 ////
@@ -25,14 +25,14 @@
 //// PURPOSE.  See the GNU Lesser General Public License for more////
 //// details. http://www.gnu.org/licenses/lgpl.html              ////
 ////                                                             ////
-/////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////##>
 
-OUTFILE REGNAME_regfile.v
+OUTFILE PREFIX_regfile.v
 INCLUDE def_regfile.txt
 
 ITER RX GROUP_REGS.NUM
 
-module REGNAME_regfile (PORTS);
+module PREFIX_regfile (PORTS);
 
    parameter            ADDR_BITS = 16;
 
@@ -88,7 +88,7 @@ module REGNAME_regfile (PORTS);
 	   end
      else if (wr_regRX)
 	   begin
-	     GROUP_REGRX.SON(TYPE==TYPE_RW) <= #FFD pwdata[EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.START-1):GROUP_REGRX.START];
+	     GROUP_REGRX.SON(TYPE==TYPE_RW) <= #FFD pwdata[EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.FIRST_BIT-1):GROUP_REGRX.FIRST_BIT];
 	   end
 	   
    ENDIF TRUE(GROUP_REGS[RX].TYPE == TYPE_RW)
@@ -101,7 +101,7 @@ module REGNAME_regfile (PORTS);
      begin
 	   rd_regGROUP_REGS.SON(TYPE != TYPE_WO).IDX  = {32{1'b0}};
 	   
-	   rd_regRX[EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.START-1):GROUP_REGRX.START] = GROUP_REGRX.SON(TYPE != TYPE_WO);     //GROUP_REGRX.DESC
+	   rd_regRX[EXPR(GROUP_REGRX.WIDTH+GROUP_REGRX.FIRST_BIT-1):GROUP_REGRX.FIRST_BIT] = GROUP_REGRX.SON(TYPE != TYPE_WO);     //GROUP_REGRX.DESC
      end
    
    always @(*)
